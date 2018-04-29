@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Account Update</h3>
+<form th:action="@{/account/edit}"
+      th:object="${account}" method="post">
+<table  cellpadding="2" cellspacing="2">
+<tr>
+	<td>Username</td>
+	<td><input type="text" th:field="*{username}"/></td>
+</tr>
+<tr>
+	<td>Password</td>
+	<td><input type="password" th:field="*{password}"/></td>
+</tr>
+<tr>
+	<td>Fullname</td>
+	<td><input type="text" th:field="*{fullname}"/></td>
+</tr>
+<tr>
+	<td><input th:field="*{id}" type="hidden"/></td>
+	<td><input type="submit" value="Save"/>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

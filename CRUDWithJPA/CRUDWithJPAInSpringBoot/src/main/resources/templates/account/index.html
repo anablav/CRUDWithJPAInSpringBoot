@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Account List</h3>
+<a th:href="@{/account/add}" >Add New Account</a>
+<table border="1" cellpadding="2" cellspacing="2">
+<tr>
+	<th>Id</th>
+	<th>UserName</th>
+	<th>FullName</th>
+</tr>
+<tr th:each="account, iterStat: ${accounts}">
+	<td th:text=${account.id}></td>
+	<td th:text=${account.username}></td>
+	<td th:text=${account.fullname}></td>
+	<td>	 <a th:href="${'/account/edit/' + account.id}" > Edit </a></td>
+	<td>	 <a th:href="${'/account/delete/' + account.id}" >Delete</a>
+</tr>
+</table>
+
+</body>
+</html>
